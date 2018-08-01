@@ -5,11 +5,17 @@ import YSearch from 'youtube-api-search';
 
 const YOUTUBE_API_KEY = 'AIzaSyAypMwkSgPExT_Sm1e6ckqlgG8GqysFxkY'
 
-YSearch({ key: YOUTUBE_API_KEY, term: '猫　きゅうり'}, (data) => {
-  console.log(data);
-});
-
 class App extends Component {
+
+state = { videos: [] }
+
+componentDidMount(){
+  YSearch({ key: YOUTUBE_API_KEY, term: '猫　きゅうり'},
+    (data) => {this.setState({videos: data});
+  });
+}
+
+
   render() {
     return (
       <div className="App">
