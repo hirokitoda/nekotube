@@ -1,20 +1,21 @@
- import React from 'react';
+import React from 'react';
 
- const Item = (props) => {
-   console.log("Propsを受け取りました。");
-   console.log(props.video);
-   return (
-     <li className="list-group-item">
+const Item = (props) => {
+  console.log("Propsを受け取りました");
+  console.log(props);
+  return (
+    <li className="list-group-item">
       <div className="video-list media">
         <div className="media-left">
-          <img className="mr-3" src={props.video.snippet.thumbnails.default.url} />
+          <img className="mr-3" src={props.video.snippet.thumbnails.default.url}
+          alt="thumbnails" />
         </div>
         <div className="media-body">
           <h5 className="media-heading">{props.video.snippet.title}</h5>
         </div>
       </div>
-     </li>
-   );
- };
+    </li>
+  );
+}
 
- export default Item;
+export default Item;
