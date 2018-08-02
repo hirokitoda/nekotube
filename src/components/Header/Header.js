@@ -7,6 +7,7 @@ class Header extends Component {
 
   onInputChangeHandler = (event) => {
     this.setState({keyword: event.target.value});
+    this.props.onKeywordChanged(event.target.value);
   }
 
   render(){
@@ -15,6 +16,7 @@ class Header extends Component {
       fontFamily: 'Luckiest Guy',
       fontFamily: 'Titan One'
     }
+
 
     return(
       <nav className="navbar navbar-expand navbar-light bg-light mb-3 p-3">
